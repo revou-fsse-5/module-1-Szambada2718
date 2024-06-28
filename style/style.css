@@ -27,20 +27,20 @@
       
 }
 :root {
-    --text-color: #b5e3eb;
-    --text-color-2: #176477;
+    --text-color: #c5d9da;
+    --text-color-2: #f9f9f9;
     --bg-color:var #000000;
     --main-color: #ffa343;
     --btn-color: #317d78;
-
-
+    
     --h1-font: 6rem;
     --h2-font: 3rem;
     --p-font: 1rem;
 }
 body {
     color: var(--text-color);
-    background: var(--bg-color);
+    background: #275252;
+   
 }
 header {
     position: fixed;
@@ -123,13 +123,33 @@ section{
     font-weight: 700;
     line-height: 1;
     margin-bottom: 20px;
+    text-shadow: 1px 1px var(--text-color-2);
+    animation: text 3s 1;
+}
+
+@keyframes text {
+    0%{
+        color: var(--text-color);
+        margin-bottom: -40px;
+    }
+    30%{
+        letter-spacing: 25px;
+        margin-bottom: -40px;
+    }
+    85%{
+        letter-spacing: 8px;
+        margin-bottom: -40px;
+    }
 }
 .home-text p{
     font-size: var(--p-font);
     font-weight: 500;
     line-height: '30px';
-    color: var(--text-color);
+    color: #c5d9da;
     margin-bottom: 35px;
+}
+@keyframe cursor{
+    50%{border-color: trasparent}
 }   
 .btn{
     display: inline-block;
@@ -178,9 +198,11 @@ section{
     transition: transform 0.7s;
 }
 .holiday{
+    position: static;
     display: grid;
-    grid-template-columns: repeat(3, 3fr);
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
+    text-alig;
     gap: 9rem;
 
 }
@@ -196,7 +218,8 @@ section{
     color: var(--main-color);
     text-transform:none;
     letter-spacing: 6px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    
 
 }
 .holiday-text h2{
@@ -209,7 +232,7 @@ section{
     font-size: var(--p-font);
     font-weight: 500;
     line-height: 30px;
-    color: #268694ab;
+    color: #ffffffab;
     margin-bottom: 35px;
 }
 
@@ -223,32 +246,37 @@ font-weight: 800;
 }
 .tour-content{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 1px;
+    grid-row-gap: 0px;
+    position: relative;
     align-items: center;
-    gap: 3rem;
-    margin-top: 5rem;
+    gap: 0.5rem;
+    margin-top: 1rem;
 
 }
 .box{
-    position: relative;
+position: relative;
 
 }
 .box img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 300px;
+    margin-left: 2px;
     border-radius: 10px;
-    filter: brightness(70%);
-    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all .3s cubic-bezier(499,.05,.055,.95);
     will-change: filter;
     display: block;
+    
 }
 .box h6{
     position: absolute;
     left: 25px;
     bottom: 95px;
+    color: #48d3db;
     font-size: 18px;
     font-weight: 500;
+    text-shadow: 2px 2px #000000;
 
 }
 .box img:hover{
@@ -258,7 +286,7 @@ font-weight: 800;
 }
 .center-btn{
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 .newsletter-content{
     display: grid;
