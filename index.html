@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="Travel-Indonesia-Bali-Cangu-Kuta-Nusa-Dua-Kecak-Melasti-Apurva-beach-club-liburan-escape-holiday-staycation" content="width=device-width, initial-scale=1">
     <title>TraveLook</title>
@@ -37,11 +38,19 @@
         <a href="#">Follow Kita!</a>
         <a href="#"><i class="ri-instagram-fill"></i></a>
         <a href="#"><i class="ri-twitter-x-fill"></i></a>
-        <a href="#"><i class="ri-whatsapp-fill"></i></a>
+        <a href="#"><i class="ri-whatsapp-fi  ll"></i></a>
         <div class="bx bx-menu" id="menu-icon"></div>
      </div>
     
     </header>
+    <section class="banner"></section>
+    <script type="text/javascript">
+        window.addEventListener("scroll",function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky",window.scrollY > 0)
+        })
+
+    </script>
 
     <!---home section design--> 
     <section class="home">
