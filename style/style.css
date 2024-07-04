@@ -7,32 +7,32 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    .poppins-regular {
-        font-family: "Poppins", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-      }
-      
-      .poppins-medium {
-        font-family: "Poppins", sans-serif;
-        font-weight: 500;
-        font-style: normal;
-      }
-      
-      .poppins-regular-italic {
-        font-family: "Poppins", sans-serif;
-        font-weight: 400;
-        font-style: italic;
-      }
-      
 }
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .poppins-regular-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
 :root {
     --text-color: #c5d9da;
     --text-color-2: #f9f9f9;
     --bg-color:var #000000;
     --main-color: #ffa343;
     --btn-color: #317d78;
-    
+
     --h1-font: 6rem;
     --h2-font: 3rem;
     --p-font: 1rem;
@@ -40,13 +40,13 @@
 body {
     color: var(--text-color);
     background: #275252;
-   
+
 }
 header {
-    position: fixed;
+    position: sticky;
     top: 0;
     right: 0;
-    z-index: 10000;  
+    z-index: 10000;
     width: 100%;
     background: transparent;
     padding: 27px 17%;
@@ -55,6 +55,13 @@ header {
     justify-content: space-between;
     transition: all .50s ease;
 }
+
+@media screen and (max-width: 1024px) {
+    header {
+        padding: 27px 5%;
+    }
+}
+
 .header.stcky{
     padding: 5px 100px;
     background: #317d78;
@@ -80,6 +87,13 @@ span{
 .navbar a:hover{
     color: var(--main-color)
 }
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+}
+
 .h-right{
     display: flex;
     align-items: center;
@@ -94,7 +108,7 @@ span{
     font-size: 20px;
     color: var(--text-color);
     margin-right: 12px;
-    margin left: 5px;
+    margin-left: 5px;
     transition: all .50s ease;
 }
 .h-right a:hover{
@@ -106,14 +120,17 @@ span{
     font-size: 25px;
     cursor: pointer;
     z-index: 1000;
-} 
+}
 section{
     padding: 70px 17% 60px;
+}
+.banner {
+    padding: unset;
 }
 .home{
     position: relative;
     height: 110vh;
-    width: 110%;
+    width: 100%;
     background-image: linear-gradient(to left, rgba(0,0,0,0.6),rgba(0,0,0,0.3)), url(kecak\ dance.jpg);
     background-size: cover;
     background-position-x: center;
@@ -129,6 +146,13 @@ section{
     margin-bottom: 20px;
     text-shadow: 1px 1px var(--text-color-2);
     animation: text 3s 1;
+}
+
+@media screen and (max-width: 425px) {
+    .home-text h1 {
+        font-size: 36px;
+        line-height: 50px;
+    }
 }
 
 @keyframes text {
@@ -154,7 +178,7 @@ section{
 }
 @keyframe cursor{
     50%{border-color: trasparent}
-}   
+}
 .btn{
     display: inline-block;
     padding: 13px 40px;
@@ -174,10 +198,27 @@ section{
     color: var(--text-color);
 }
 
+header.sticky{
+    background: var(--bg-color);
+    /* padding: 10px 18%; */
+
+
+}
+
+
+@media screen and (max-width: 1024px) {
+    header.sticky{
+        padding: 10px 5%;
+    }
+}
+
 .sticky{
     padding: 8px 17%;
     background: transparent;
     backdrop-filter: blur(35px);
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(0,0,0,0.3) 0px 10px 10px -10;
 }
 
 nav{
@@ -212,10 +253,24 @@ nav{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    text-alig;
-    gap: 9rem;
-
+    gap: 2rem;
 }
+
+@media screen and (max-width: 768px) {
+    .holiday {
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .holiday {
+        padding: unset;
+        gap: unset;
+        padding-top: 20px;
+    }
+}
+
 .holiday-img img{
     width: 100%;
     height: auto;
@@ -229,7 +284,7 @@ nav{
     text-transform:none;
     letter-spacing: 6px;
     margin-bottom: 5px;
-    
+
 
 }
 .holiday-text h2{
@@ -254,6 +309,14 @@ nav{
 font-size: var(--h2-font);
 font-weight: 800;
 }
+
+@media screen and (max-width: 1024px) {
+    .tour {
+        padding: unset;
+    }
+
+}
+
 .tour-content{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -270,13 +333,13 @@ will-change: filter;
 cursor: pointer;
 }
 .box img{
-   
+
     position: relative;
     width: 300px;
     margin-left: 2px;
     border-radius: 5px;
     display: block;
-   
+
 }
 .box h6{
     position: absolute;
@@ -314,13 +377,13 @@ cursor: pointer;
     grid-template-columns: 1fr 0.4fr;
     gap: 1rem;
 }
-.newsletter-content form input: :first-child{
+/* .newsletter-content form input: :first-child{
     padding: 15px;
     background: #202020;
     font-size: var(--p-font);
     color: var(--text-color);
     border-radius: 5px;
-}
+} */
 .footer{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, auto));
@@ -330,15 +393,11 @@ cursor: pointer;
     display: flex;
     flex-direction: column;
 }
-header.sticky{
-    background: var(--bg-color);
-    padding: 10px 18%;
-    box-shadow: rgba(0,0,0,0.3) 0px 10px 10px -10;
-}
+
 @media screen and (max-width: 600px)
 {
     .home-text{
         font-size: 36px;
-        line-height: 50px; 
+        line-height: 50px;
     }
 }
