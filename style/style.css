@@ -401,3 +401,9 @@ cursor: pointer;
         line-height: 50px;
     }
 }
+.footer{
+    color: var(--main-color);
+}
+.footer-box{gi
+    color: var(--text-color-2);
+}
